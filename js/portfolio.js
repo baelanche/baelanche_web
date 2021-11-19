@@ -1,6 +1,6 @@
 
 $("document").ready(function(){
-
+    var section = $(".section").length-1;
     var height=$(window).height(),
         count=0,
         wc=0,
@@ -43,13 +43,23 @@ function wideWindow(){
 
   })
   //모바일 네비바 클릭 시
+  /*
   $('.mobile_bars').click(function(){
     $('nav').slideToggle();
   });
-  function scrollevent(pos){
+  */
+  function scrollevent(pos, section){
     //ASIDE EVENT
     var current=(pos / (height * 5));
-    bar_aside.animate(current);
+    var secnum = current*5;
+    console.log(secnum, section);
+    if(secnum >= section) {
+      $("aside .arrow").removeClass("rotate")
+    } else {
+      $("aside .arrow").addClass("rotate")
+    }
+    //bar_aside.animate(current);
+    /*
     if(pos!=0){
         $("aside #bar_aside").addClass("op")
         $("aside .arrow").addClass("rotate")
@@ -57,16 +67,16 @@ function wideWindow(){
         $("aside #bar_aside").removeClass("op")
         $("aside .arrow").removeClass("rotate")
     }
-
+    */
     //NAV HIDE SHOW EVENT
 
   if(pos>=height){
     if($(window).width() >1280) {
           $("nav").fadeIn(500);
     }
-  }else{
+  } else {
           $("nav").fadeOut(500);
-  }
+    }
   }
     //WHEEL EVENT
     var wheeltime=false;
@@ -132,7 +142,10 @@ function wideWindow(){
     });
 
     $(window).on("mousewheel DOMMousewheel",function(e){
-
+        if (count > section) {
+          count = section;
+          return;
+        }
       //pos값 제어
         var delta=e.originalEvent.wheelDelta;
 
@@ -162,7 +175,7 @@ function wideWindow(){
         $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
         //scrollEvent 실핸
         pos=height * (count);
-        scrollevent(pos);
+        scrollevent(pos, section);
         //divevent 실행
         if(count==1) {
           typingStart();
@@ -219,9 +232,8 @@ function wideWindow(){
         $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
 
         //scrollEvent 실핸
-        console.log(count);
         pos=height * (count);
-        scrollevent(pos);
+        scrollevent(pos, section);
 
         //GUIDE CLOSE
         if(e.keyCode==27){
@@ -253,5 +265,5 @@ function wideWindow(){
            $('div').removeClass('loading_back');*/
        }, 1000);
      });
-     
+
 })
