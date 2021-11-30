@@ -4,7 +4,7 @@ h1{ font-family: 'Black Han Sans', sans-serif; }
 
 h1 { cursor: default; }
 
-a { cursor: pointer; }
+a { cursor: pointer; text-decoration: none; color: darkblue;}
 
 span, p { font-family: 'Noto Sans KR', sans-serif; cursor: default; }
 
