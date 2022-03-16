@@ -25,6 +25,7 @@ nav ol li.pos { font-weight: 400; color: #7d6f7c; }
 aside { position: fixed; width: 50px; height: 50px; right: 40px; bottom: 40px; cursor: pointer; z-index: 99; }
 aside #bar_aside { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s; }
 aside #bar_aside.op { opacity: 1; }
+aside #footer_notice { position: fixed; width:100px; height:10px; right: 45%; bottom: 40px; color: lightgrey;}
 aside .arrow { position: absolute; width: 100%; height: 100%; transition: transform 1s; }
 aside .arrow img { width: 100%; height: 100%; }
 aside .arrow.rotate { transform: rotate(-180deg); }

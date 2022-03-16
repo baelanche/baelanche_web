@@ -52,7 +52,7 @@ function wideWindow(){
     //ASIDE EVENT
     var current=(pos / (height * 5));
     var secnum = current*5;
-    console.log(secnum, section);
+
     if(secnum >= section) {
       $("aside .arrow").removeClass("rotate")
     } else {
@@ -173,7 +173,7 @@ function wideWindow(){
 
         //NAV
         $("nav ol li").removeClass("pos").eq(count-1).addClass("pos")
-        //scrollEvent 실핸
+        //scrollEvent 실행
         pos=height * (count);
         scrollevent(pos, section);
         //divevent 실행
