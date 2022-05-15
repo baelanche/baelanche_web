@@ -4,11 +4,11 @@ h1{ font-family: 'Black Han Sans', sans-serif; }
 
 h1 { cursor: default; }
 
-a { cursor: pointer; text-decoration: none; color: darkblue;}
+a { cursor: pointer; text-decoration: none; color: darkviolet; }
 
 span, p { font-family: 'Noto Sans KR', sans-serif; cursor: default; }
 
-ul li{ font-family: 'Noto Sans KR'; margin-bottom: 5px; }
+ul li{ font-family: 'Noto Sans KR'; margin-bottom: 5px; color: #7d6f7c; }
 
 .wrap { max-width: 1500px; margin: 0 auto; }
 
